@@ -3,12 +3,15 @@ import { useState } from "react";
 import { BsChevronDown, BsChevronUp } from "react-icons/bs";
 
 import DropdownList from "./DropdownList";
+import { useOutsideClick } from "../../hooks/useOutsideClick";
 
 function MultiDropdown() {
   const [items, setItems] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(true);
   const [selectedItem, setSelectedItem] = useState<string>("");
+
+  const ref = useOutsideClick(() => setIsOpen(false), false);
 
   const handleAddItem = (e: React.KeyboardEvent) => {
     if (
@@ -26,7 +29,10 @@ function MultiDropdown() {
   };
 
   return (
-    <div className={`${styles.multiDropdown} ${isOpen ? styles.open : ""}`}>
+    <div
+      className={`${styles.multiDropdown} ${isOpen ? styles.open : ""}`}
+      ref={ref}
+    >
       <div className={styles.dropdownInput}>
         <input
           type="text"

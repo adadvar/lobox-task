@@ -1,7 +1,11 @@
 import MultiDropdown from "./components/MultiDropdown";
 
 function App() {
-  return <MultiDropdown />;
+  return (
+    <div className="app">
+      <MultiDropdown />
+    </div>
+  );
 }
 
 export default App;

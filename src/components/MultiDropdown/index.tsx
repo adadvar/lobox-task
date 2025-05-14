@@ -5,6 +5,8 @@ import DropdownList from "./DropdownList";
 function MultiDropdown() {
   const [items, setItems] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
+  const [isOpen, setIsOpen] = useState(true);
+
   const handleAddItem = (e: React.KeyboardEvent) => {
     if (
       e.key === "Enter" &&
@@ -27,7 +29,7 @@ function MultiDropdown() {
         />
         <button>+</button>
       </div>
-      <DropdownList items={items} />
+      {isOpen && <DropdownList items={items} />}
     </div>
   );
 }

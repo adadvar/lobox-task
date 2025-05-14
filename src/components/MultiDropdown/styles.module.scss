@@ -61,6 +61,11 @@
       cursor: pointer;
       display: flex;
       justify-content: space-between;
+
+      &:hover {
+        background-color: #e8f0fe;
+        color: #4e8cff;
+      }
     }
   }
 }

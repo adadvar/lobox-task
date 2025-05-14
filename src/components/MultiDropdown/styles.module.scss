@@ -34,6 +34,33 @@
       background: none;
       border: none;
       cursor: pointer;
+
+      svg {
+        stroke-width: 1px;
+        color: #848484;
+      }
+    }
+  }
+
+  .dropdownList {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    right: 0;
+    top: 50px;
+    width: 100%;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 16px;
+    border: 1px solid #f6f6f6;
+    padding: 20px 10px;
+
+    .dropdownItem {
+      border-radius: 6px;
+      padding: 9px 14px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

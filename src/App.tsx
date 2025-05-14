@@ -1,7 +1,7 @@
-import "./App.css";
+import MultiDropdown from "./components/MultiDropdown";
 
 function App() {
-  return <div>Hello world!</div>;
+  return <MultiDropdown />;
 }
 
 export default App;

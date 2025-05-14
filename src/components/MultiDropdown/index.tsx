@@ -19,7 +19,7 @@ function MultiDropdown() {
   };
 
   return (
-    <div className="multi-dropdown">
+    <div className={styles.multiDropdown}>
       <div className="dropdown-input">
         <input
           type="text"

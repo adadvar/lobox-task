@@ -12,6 +12,7 @@ function MultiDropdown() {
       !items.includes(inputValue.trim())
     ) {
       setItems([...items, inputValue.trim()]);
+      setInputValue("");
     }
   };
 

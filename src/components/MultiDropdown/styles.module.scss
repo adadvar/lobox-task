@@ -30,10 +30,13 @@
     }
 
     .dropdownToggle {
-      width: 12px;
       background: none;
       border: none;
       cursor: pointer;
+
+      span {
+        pointer-events: none;
+      }
 
       svg {
         stroke-width: 1px;

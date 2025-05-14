@@ -16,6 +16,9 @@ function DropdownItem({
         selectedItem === item ? styles.selected : ""
       }`}
       onClick={() => onToggle(item)}
+      role="option"
+      aria-selected={selectedItem === item}
+      tabIndex={0}
     >
       <span className={styles.title}>{item}</span>
       {selectedItem === item && (

@@ -12,7 +12,7 @@ function DropdownList({
   onToggle: (item: string) => void;
 }) {
   return (
-    <ul className={styles.dropdownList}>
+    <ul className={styles.dropdownList} role="listbox">
       {items.map((item, index) => (
         <DropdownItem
           item={item}

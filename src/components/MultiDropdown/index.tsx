@@ -27,7 +27,7 @@ function MultiDropdown() {
           onChange={(e) => setInputValue(e.target.value)}
           onKeyDown={handleAddItem}
         />
-        <button>+</button>
+        <button onClick={() => setIsOpen((isOpen) => !isOpen)}>+</button>
       </div>
       {isOpen && <DropdownList items={items} />}
     </div>

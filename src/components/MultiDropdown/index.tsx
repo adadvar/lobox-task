@@ -1,5 +1,7 @@
 import styles from "./styles.module.scss";
 import { useState } from "react";
+import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+
 import DropdownList from "./DropdownList";
 
 function MultiDropdown() {
@@ -19,15 +21,21 @@ function MultiDropdown() {
   };
 
   return (
-    <div className={styles.multiDropdown}>
-      <div className="dropdown-input">
+    <div className={`${styles.multiDropdown} ${isOpen ? styles.open : ""}`}>
+      <div className={styles.dropdownInput}>
         <input
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onFocus={() => setIsOpen(true)}
           onKeyDown={handleAddItem}
         />
-        <button onClick={() => setIsOpen((isOpen) => !isOpen)}>+</button>
+        <button
+          className={styles.dropdownToggle}
+          onClick={() => setIsOpen((isOpen) => !isOpen)}
+        >
+          <span>{isOpen ? <BsChevronUp /> : <BsChevronDown />}</span>
+        </button>
       </div>
       {isOpen && <DropdownList items={items} />}
     </div>

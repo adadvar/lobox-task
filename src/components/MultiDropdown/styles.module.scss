@@ -62,6 +62,20 @@
       display: flex;
       justify-content: space-between;
 
+      .checkIcon {
+        width: 16px;
+        height: 16px;
+      }
+
+      svg {
+        stroke-width: 1px;
+      }
+
+      &.selected {
+        background-color: #e8f0fe;
+        color: #4e8cff;
+      }
+
       &:hover {
         background-color: #e8f0fe;
         color: #4e8cff;

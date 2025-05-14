@@ -8,6 +8,7 @@ function MultiDropdown() {
   const [items, setItems] = useState<string[]>([]);
   const [inputValue, setInputValue] = useState("");
   const [isOpen, setIsOpen] = useState(true);
+  const [selectedItem, setSelectedItem] = useState<string>("");
 
   const handleAddItem = (e: React.KeyboardEvent) => {
     if (
@@ -20,12 +21,16 @@ function MultiDropdown() {
     }
   };
 
+  const toggleItemSelection = (item: string) => {
+    setSelectedItem((prev) => (prev === item ? "" : item));
+  };
+
   return (
     <div className={`${styles.multiDropdown} ${isOpen ? styles.open : ""}`}>
       <div className={styles.dropdownInput}>
         <input
           type="text"
-          value={inputValue}
+          value={inputValue || selectedItem}
           onChange={(e) => setInputValue(e.target.value)}
           onFocus={() => setIsOpen(true)}
           onKeyDown={handleAddItem}
@@ -37,7 +42,13 @@ function MultiDropdown() {
           <span>{isOpen ? <BsChevronUp /> : <BsChevronDown />}</span>
         </button>
       </div>
-      {isOpen && <DropdownList items={items} />}
+      {isOpen && (
+        <DropdownList
+          items={items}
+          selectedItem={selectedItem}
+          onToggle={toggleItemSelection}
+        />
+      )}
     </div>
   );
 }
